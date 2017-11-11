@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
-
+gem 'carrierwave', '0.11.2'
+gem 'cloudinary', '1.2.3'
 gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
