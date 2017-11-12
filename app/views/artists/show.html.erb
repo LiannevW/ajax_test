@@ -7,8 +7,12 @@
   <ul>
     <% @artist.songs.each do |song| %>
       <li><%= song.name %></li>
+      <%= link_to "Show", artist_song_path(@artist) %>
+
     <% end %>
   </ul>
 <% else %>
   <p>This artist did not produce songs.</p>
 <% end %>
+
+  <%= link_to "Add new song", new_artist_song_path(@artist) %>
