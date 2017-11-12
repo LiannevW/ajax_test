@@ -1,9 +1,5 @@
 <h1><%= @artist.name %></h1>
 
-<% @artist.photos.each do |photo| %>
-<%= image_tag photo.image.thumbnail %>
-<% end %>
-
 <h4>All songs!</h4>
 
 <% if @artist.songs.any? %>
@@ -15,3 +11,5 @@
 <% else %>
   <p>This artist did not produce songs.</p>
 <% end %>
+
+<%= link_to "[Delete]", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
