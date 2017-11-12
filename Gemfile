@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.4.1'
 
 gem 'carrierwave', '0.11.2'
 gem 'cloudinary', '1.2.3'
@@ -35,3 +36,4 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'rails_12factor', group: :production
