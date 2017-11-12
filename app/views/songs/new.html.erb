@@ -1,15 +1,8 @@
 <h1>Add a new song to your favorite artist!</h1>
 
-
-<p><%= form_for @songs.artists do |f| %></p>
-  <p><%= f.label :name %></p>
-  <p><%= f.text_field :name %></p>
-
-  <p><%= f.label :age %></p>
-  <p><%= f.number_field :age %></p>
-
-  <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+<%= form_for @song do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
   <%= f.submit "Create" %>
 <% end %>

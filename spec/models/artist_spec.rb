@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-Rs.describe Artist, type: :model do
+RSpec.describe Artist, type: :model do
 
   describe "validations" do
     it "is invalid without a name" do
       artist = Artist.new(name: "")
+      artist.valid?
       expect(artist.errors).to have_key(:name)
     end
 
@@ -16,7 +17,8 @@ Rs.describe Artist, type: :model do
 
     it "is invalid without a image" do
       artist = Artist.new(image: "")
-      expect(artist.error).to have_key(:image)
+      artist.valid?
+      expect(artist.errors).to have_key(:image)
     end
   end
 

@@ -7,7 +7,7 @@ end
 
 ruby '2.4.1'
 
-gem 'carrierwave', '0.11.2'
+gem'carrierwave', '0.11.2'
 gem 'cloudinary', '1.2.3'
 gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
@@ -37,3 +37,4 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails_12factor', group: :production
+gem 'devise', '~> 4.2'

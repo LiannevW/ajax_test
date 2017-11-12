@@ -1,6 +1,8 @@
 class Artist < ApplicationRecord
   has_many :songs, dependent: :destroy
-  #has_many :photos
 
-mount_uploader :image, ImageUploader
+  validates :name, presence: true, length: { maximum: 50 }
+  validates :image, presence: true
+
+  mount_uploader :image, ImageUploader
 end

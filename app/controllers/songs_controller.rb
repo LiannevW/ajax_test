@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-before_action :set_artist
+
 
   def show
     @song = Artist.song.find(params[:id])
@@ -10,6 +10,18 @@ before_action :set_artist
     @song = artist.songs.build
   end
 
+  def create
+     song_params = params.require(:song).permit(:name)
+
+     @song = Song.new(dinosaur_params)
+
+     if @song.save
+        redirect_to @artist
+     else
+        render 'new'
+     end
+   end
+
   def destroy
     @song = Song.find(params[:id])
 
@@ -17,9 +29,4 @@ before_action :set_artist
     redirect_to artist_path
   end
 
-private
-
-def set_artist
-  @artist = Artist.find(params[:id])
-end
 end

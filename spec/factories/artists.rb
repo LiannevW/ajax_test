@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :artist do
-    name "MyString"
-    image "MyString"
+    name        { Faker::Name.name}
+    image       "http//Is_this_link_working?"
   end
 end

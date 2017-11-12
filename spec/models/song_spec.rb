@@ -1,7 +1,7 @@
 
 require 'rails_helper'
 
-Rspce.describe Song, type: :model do
+RSpec.describe Song, type: :model do
   describe "validations" do
     it "is invalid without a name" do
       song = Song.new(name: "")
