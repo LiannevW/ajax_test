@@ -12,10 +12,10 @@ class SongsController < ApplicationController
 
      respond_to do |format|
        if @song.save
-         format.html {redirect_to artist_path, notice: 'song was successfully created'}
+         format.html {redirect_to artist_path(@artist.id), notice: 'song was successfully created'}
          format.json {render :show, status: :created, location: @song}
        else
-         format.html { redirect_to artist_path }
+         format.html { redirect_to artist_path(@artist.id) }
          format.json { render jons: @song.errors, status: :unprocessable_entity }
       end
    end
@@ -27,5 +27,5 @@ class SongsController < ApplicationController
     @song.destroy
     redirect_to root_path
   end
-
+end
 end

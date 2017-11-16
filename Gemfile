@@ -7,6 +7,7 @@ end
 
 ruby '2.4.1'
 
+gem 'jquery-rails'
 gem'carrierwave', '0.11.2'
 gem 'cloudinary', '1.2.3'
 gem 'rails', '~> 5.1.4'
