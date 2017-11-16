@@ -1,0 +1,8 @@
+<h1>Add a new song to your favorite artist!</h1>
+
+<%= form_for [@artist, @artist.songs.new] do |f| %>
+  <%= f.label :name, placeholder: "What song do you want to add?" %>
+  <%= f.text_field :name %>
+
+  <%= f.submit "Create" %>
+<% end %>
