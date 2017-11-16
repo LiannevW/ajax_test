@@ -1,19 +1,14 @@
 class SongsController < ApplicationController
 
-
-  def show
-    @song = Artist.song.find(params[:id])
-  end
-
   def new
-    artist = Artist.find(params[:artist_id])
-    @song = artist.songs.build
+    @artist = Artist.find(params[:artist_id])
+    @song = @artist.songs.build
   end
 
   def create
      song_params = params.require(:song).permit(:name)
-
-     @song = Song.new(dinosaur_params)
+     @artist = Artist.find(params[:artist_id])
+     @song = @artist.songs.new(song_params)
 
      if @song.save
         redirect_to @artist
@@ -23,10 +18,11 @@ class SongsController < ApplicationController
    end
 
   def destroy
-    @song = Song.find(params[:id])
+    @artist = Artist.find(params[:artist_id])
+    @song = @artist.songs.find(params[:id])
 
     @song.destroy
-    redirect_to artist_path
+    redirect_to root_path
   end
 
 end
